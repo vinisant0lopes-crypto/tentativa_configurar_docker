@@ -16,5 +16,5 @@ COPY . .
 # Expõe a porta que o Express está escutando
 EXPOSE 3000
 
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "start" ]
 
