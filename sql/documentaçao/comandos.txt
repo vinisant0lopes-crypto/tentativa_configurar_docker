@@ -1,0 +1,17 @@
+docker run -d --name meu_mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=meubanco -p 3307:3306 -v "${PWD}\sql\tabelas_sql\tabela.sql:/docker-entrypoint-initdb.d/tabela.sql" mysql:8.0
+
+consultar dados:
+
+docker exec -it meu_mysql mysql -u root -proot meubanco -e "SELECT * FROM usuarios;"
+
+parar o banco:
+
+docker stop meu_mysql
+
+iniciar o banco:
+
+docker start meu_mysql
+
+caso alterar o .sql:
+
+docker rm -f meu_mysql

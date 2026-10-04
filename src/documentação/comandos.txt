@@ -1,0 +1,15 @@
+construir a imagem docker:
+
+docker build -t meu-express-app .
+
+rodar container express:
+
+docker run -d -p 3000:3000 --name app_express meu-express-app
+
+parar servidor express:
+
+docker stop app_express
+
+iniciar novamente:
+
+docker start app_express
