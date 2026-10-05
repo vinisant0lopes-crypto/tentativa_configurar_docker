@@ -1,8 +1,8 @@
-docker run -d --name meu_mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=meubanco -p 3307:3306 -v "${PWD}\sql\tabelas_sql\tabela.sql:/docker-entrypoint-initdb.d/tabela.sql" mysql:8.0
+docker run -d --name meu_mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=meubanco -p 3307:3306 -v "$PWD/sql/tabelas_sql/tabela.sql:/docker-entrypoint-initdb.d/tabela.sql" mysql:8.0
 
 consultar dados:
 
-docker exec -it meu_mysql mysql -u root -proot meubanco -e "SELECT * FROM usuarios;"
+docker exec -it meu_mysql mysql -u root -proot meubanco -e "SELECT * FROM tbUsuario;"
 
 parar o banco:
 
