@@ -14,7 +14,9 @@ parar o banco:
 
 docker stop meu_mysql
 
+remover container:
 
+docker rm meu_mysql
 
 caso alterar o .sql:
 
