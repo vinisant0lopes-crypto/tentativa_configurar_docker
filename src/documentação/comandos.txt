@@ -13,3 +13,21 @@ docker stop app_express
 iniciar novamente:
 
 docker start app_express
+
+===========================================================================
+
+conexão docker node express:
+
+docker network create minha-rede
+
+subir container mySQL na rede:
+
+// importante remover o container antigo primeiro: docker rm -f meu_mysql
+
+docker run -d --name meu_mysql --network minha-rede -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=meubanco -p 3307:3306 -v "$PWD/sql/tabelas_sql/tabela.sql:/docker-entrypoint-initdb.d/tabela.sql" mysql:8.0
+
+subir container node express:
+
+//docker rm -f app_express
+
+docker run -d -p 3000:3000 --name app_express --network minha-rede meu-express-app
